@@ -204,8 +204,6 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/adventor.font.
 
             </div>
 
-            <div id="top"><a href="#">Top</a></div>
-
         </div>
 
         <?php if($config->debug && $this->user->isSuperuser()) include($config->paths->adminTemplates . "debug.inc"); ?>
