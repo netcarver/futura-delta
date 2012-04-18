@@ -1,0 +1,440 @@
+
+/**********************************************************************************************
+ * ProcessWire Admin Control Panel - Skyscraper Theme - ui.css
+ *
+ * This file provides the final layout styling and overdies for the admin control panel. 
+ * This is typically the last CSS file loaded, so it is used for overriding any default
+ * styles provided by ProcessWire modules. 
+ *
+ * Copyright 2010 by Ryan Cramer
+ *
+ */
+
+
+/****************************************************************************************
+ * Theme specific jQuery UI overrides and additions
+ *
+ */
+
+.ui-icon {
+	float: left; 
+	margin-right: 2px; 
+}
+
+#notices .ui-state-highlight,
+#notices .ui-state-error {
+	padding: 8px 24px;
+	color: #fff;
+}
+
+#notices .ui-state-highlight {
+	background: #9dce58;
+}
+
+#notices .ui-state-error {
+	background: #ef3a39;
+	border: none;
+}
+
+	#notices .ui-state-error pre {
+		font-size: 11px; 
+		margin: 1em 0;
+	}
+
+	#notices .ui-icon {
+		position: relative;
+		top: 0;
+		margin-right: 10px;
+		width: 20px;
+		height: 20px;
+		display: block;
+	}
+
+	#notices .ui-state-highlight .ui-icon {
+		background: url(images/ui-icons.png) 0 0 no-repeat;
+	}
+	
+	#notices .ui-state-error .ui-icon {
+		background: url(images/ui-icons.png) 0 -20px no-repeat;
+	}
+
+.ui-dialog .ui-dialog-content {
+	padding: 0; 
+}
+
+
+/****************************************************************************************
+ * Theme specific Inputfield module overrides
+ *
+ */
+
+.Inputfields {
+}
+
+	.Inputfields,
+	.Inputfields li,
+	.Inputfields input,
+	.Inputfields select,
+	.Inputfields textarea {
+		font-size: 12px;
+		outline: none;
+	}
+
+	.Inputfields input,
+	.Inputfields select,
+	.Inputfields textarea {
+		padding: 5px;
+		border: 1px solid #d2dadd;
+		color: #434b54;
+	}
+
+	.Inputfields input:focus,
+	.Inputfields select:focus,
+	.Inputfields textarea:focus {
+		border: 1px solid #9ba7af;
+		box-shadow: rgba(115,125,131, 0.15) 0px 0px 6px;  
+		-moz-box-shadow: rgba(115,125,131, 0.15) 0px 0px 6px;  
+		-webkit-box-shadow: rgba(115,125,131, 0.15) 0px 0px 6px;
+	}
+
+	.Inputfields .ui-widget-content {
+		padding: 1em; 
+	}
+
+	.Inputfields .ui-widget-header {
+		padding: 0.25em 0 0.25em 1em; 
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-o-user-select: none;
+		user-select: none;
+	}
+
+		.Inputfields .InputfieldStateToggle span.ui-icon {
+			float: right; 
+			padding-right: 0.25em; 
+		}
+
+	.Inputfields > li > .ui-widget-content > p {
+		margin-top: 0; 
+	}
+	.Inputfields > li > .ui-widget-content > .Inputfields > li {
+		margin-top: 0.5em; 
+	}
+
+	.Inputfields li > .ui-widget-content .Inputfields > li:last-child {
+		margin-bottom: 0;
+	}
+
+	.Inputfields > li {
+		display: block;
+		margin: 1.5em 0;
+		clear: both; 
+	}
+
+	.Inputfields > li .notes {
+		margin-bottom: 0; 
+	}
+
+	.Inputfields .InputfieldHidden {
+		display: none; 
+	}
+
+	.Inputfields .InputfieldSubmit,
+	.Inputfields .InputfieldButton {
+		clear: none; 
+	}
+		.Inputfields .InputfieldSubmit .ui-widget-content,
+		.Inputfields .InputfieldButton .ui-widget-content {
+			padding: 0; 
+			background: none; 
+			border: none; 
+		}
+
+		.Inputfields .InputfieldSubmit .ui-widget-header,
+		.Inputfields .InputfieldButton .ui-widget-header {
+			display: none; 
+		}
+
+		.ui-button {
+			margin: 0 6px 0 0;
+			padding: 8px 14px 6px 14px; 
+			cursor: pointer; 
+			font-size: 12px !important;
+			font-weight: bold !important; 
+			background: #2a373f !important;
+			border: none !important;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px; 
+		}
+		
+		.ui-button:hover {
+			background: #ef3a39 !important;
+			border: none !important; 
+		}
+		
+		.ui-button:active {
+			color: #fff;
+			background: #9dce58 !important;
+			border: none !important; 
+		}
+		
+		p > a > .ui-button {
+			font-size: 12px;
+		}
+
+		a .ui-button {
+			display: block;
+		}
+
+	.ui-button-text-only .ui-button-text { padding: 0px 6px 2px 6px !important; }
+
+	.Inputfields .InputfieldCheckboxes input,
+	.Inputfields .InputfieldRadios input {
+		margin-right: 0.25em; 
+	}
+		.Inputfields .InputfieldCheckboxes li,
+		.Inputfields .InputfieldRadios li {
+			margin: 0; 
+		}
+
+	.Inputfields .InputfieldCheckbox {
+	}
+		.Inputfields .InputfieldCheckbox .notes,
+		.Inputfields .InputfieldCheckboxes .notes,
+		.Inputfields .InputfieldRadios .notes {
+			margin-top: 1em; 
+		}
+
+
+	.Inputfields label {
+		display: block;
+	}
+
+	.Inputfields textarea, 
+	.InputfieldMaxWidth {
+		width: 99%; 
+	}
+
+	.Inputfields .InputfieldStateToggle {
+		cursor: pointer;
+	}
+
+		.Inputfields > .InputfieldStateCollapsed {
+		}
+
+			.Inputfields > .InputfieldStateCollapsed .ui-widget-header {
+				opacity: 0.6; 
+			}
+			.Inputfields > .InputfieldStateCollapsed .ui-widget-header:hover {
+				opacity: 1.0; 
+			}
+
+			.Inputfields > .InputfieldStateCollapsed .ui-widget-content {
+				display: none;
+			}
+
+			.Inputfields > .InputfieldStateCollapsed .InputfieldStateToggle {
+			}
+
+	.InputfieldPageNameURL {
+		font-family: Monaco, Courier, Monaco, monospace; 
+	}
+
+
+/***********************************************************************************************
+ * Theme Specific Pagination Markup
+ *
+ */
+
+.MarkupPagerNav {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        margin: 1em 0;
+}
+        .MarkupPagerNav li {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                display: inline;
+                padding: 6px 0;
+                background: none;
+        }
+
+                .MarkupPagerNav li a {
+                        padding: 4px 9px;
+                        margin: 0;
+                        text-decoration: none;
+                        border: none;
+                        background: #373d41;
+                        color: #fff;
+                        font-weight: bold;
+                        font-size: 11px;
+                        text-transform: uppercase;
+			opacity: 0.8; 
+                }
+
+                .MarkupPagerNav li a:hover {
+			opacity: 1.0; 
+		}
+
+                .MarkupPagerNav li.MarkupPagerNavOn a {
+			opacity: 1.0;
+                        color: #fff;
+                        background: #0fa8da;
+                }
+
+                .MarkupPagerNav li.MarkupPagerNavSeparator {
+                        border: none;
+                }
+
+
+/****************************************************************************************
+ * Theme specific PageList overrides
+ *
+ */
+
+ .PageList {
+	 font-family: Arial, Helvetica, sans-serif;
+}
+	/**
+	 * Default color for page list items
+	 *
+	 */
+	.PageList a.PageListPage,
+	.PageList a.PageListPage:hover {
+		color: #434b54;
+		background: none !important;
+		font-size: 12px !important;
+		text-transform: none !important;
+		font-weight: bold;
+	}
+		/**
+	 	 * Color when hovered
+		 *
+		 */
+		.PageList a.PageListPage:hover {
+			color: #ef3a39;
+			background: none;
+			text-decoration: none;
+		}
+
+	/**
+	 * Color of page when opened
+	 *
+	 */
+	.PageList .PageListItemOpen > a.PageListPage  {
+		color: #ef3a39;
+		background-color: #fff;
+
+	}
+
+	/**
+	 * Give the page a lighter/alternate color when it has a hidden status
+	 *
+	 */
+	.PageList .PageListStatusHidden a.PageListPage {
+		color: #b5c2ca;
+		font-weight: normal;
+	}
+	
+	.PageList .PageListStatusHidden a.PageListPage:hover {
+		color: #434b54;
+	}
+
+.PageList .PageListItem .PageListActions li {
+	display: inline !important;
+	border-left: 1px solid #d2dadd;
+	margin-left: 4px;
+	padding: 0 2px 0 4px;
+	text-transform: lowercase;
+}
+
+/**
+ * Default style for links in actions list
+ *
+ */
+.PageList .PageListItem .PageListActions li a {
+	padding: 1px 3px 1px 3px;
+}
+
+.PageList .PageListItem {
+	padding: 6px 0 !important;
+	margin-bottom: 3px;
+	border-bottom: 1px solid #d2dadd;
+	line-height: 18px !important;
+}
+
+.PageListItem ul li a {
+	color: #434b54 !important;
+}
+
+.PageListItem ul li a:hover {
+	color: #ef3a39 !important;
+}
+
+span.detail {
+	color: #b4bbbe;
+}
+
+.PageListSortItem > a.PageListPage {
+	background-color: #f5275c; 
+	cursor: move; 
+}
+
+.PageListSorting .PageList .PageListItem ul.actions,
+.PageList .PageListSortItem span.PageListNumChildren {
+	display: none !important; 
+}
+
+.PageListSorting .PageListItem a.PageListPage {
+	text-decoration: none;
+}
+
+.PageListPlaceholder {
+	display: none;
+}
+
+.PageListPlaceholder .PageListPlaceholderItem {
+	/*background: #eee; */
+	height: 6px; /* see .PageListItem */ 
+	margin: 0; 
+	padding: 0;
+}
+
+.PageListPlaceholder + .PageListItem,
+.PageListPlaceholder + .PageList {	
+	margin-top: 2px !important;
+}
+
+.PageListPlaceholder:last-child {
+	margin-bottom: -2px; 
+}
+
+.PageListSortPlaceholder {
+	background-color: #e9edf0; 
+	height: 30px; 
+	width: auto; 
+	border-left: 2px solid #3c545b; 
+}
+
+/**
+ * Style for the children label and notes
+ *
+ */
+.PageList .PageListNumChildren {
+	font-size: 11px; 
+	padding-left: 6px; 
+	text-transform: lowercase; 
+}
+
+#content table.AdminDataList th,
+#content table.AdminDataList td,
+#content ul.AdminDataList li {
+	border-bottom: 1px solid #d2dadd !important;
+	vertical-align: middle; 
+	padding: 8px 0;
+	margin: 0;
+}
