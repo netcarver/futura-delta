@@ -10,6 +10,10 @@ Changes include...
 * Removing the heavy focus from the search box
 * Adding a 'back-to-top' button to the right-hand panel
 
+h2. Preview
+
+!https://raw.github.com/netcarver/futura-delta/master/preview.png!
+
 h2. Installation
 
 There are a couple of ways to install this. If you only want to replace the default admin theme with this one, and you don't have another theme present then choose 'the easiest way'. If you like to switch between admin themes, then choose 'the easy way'.
