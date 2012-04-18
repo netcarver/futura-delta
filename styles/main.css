@@ -349,7 +349,12 @@ body.login {
 
 .nav ul li a {
 	display: block;
+}
+
+.nav ul li a span {
+	display: block;
 	padding: 4px 15px;
+	margin-bottom: 16px;
 	font-weight: bold;
 	color: #f0f0f0;
 	text-decoration: none;
@@ -358,17 +363,17 @@ body.login {
 	border-radius: 4px;
 }
 
-.nav ul li a:link,
-.nav ul li a:visited {
+.nav ul li a:link span,
+.nav ul li a:visited span {
 	color: #fff;
 }
 
-.nav ul li a.selected {
+.nav ul li a.selected span {
 	color: #2a373f;
 	background: #fff;
 }
 
-.nav ul li a:hover {
+.nav ul li a:hover span {
 	color: #2a373f;
 	background: #fff;
 }
