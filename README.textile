@@ -1,0 +1,33 @@
+h2. Introduction
+
+This is a slightly tweaked version of Nikola Vidoni's Futura admin theme for ProcessWire 2.2.
+
+Changes include...
+
+* Slightly increasing the width of the navigation menu 
+* Reducing the scroll delay on the most-recent-changes list on the right hand side -- making it almost sticky.
+* Reducing the submenu pop-up delays to almost nothing
+* Removing the heavy focus from the search box
+* Adding a 'back-to-top' button to the right-hand panel
+
+h2. Installation
+
+There are a couple of ways to install this. If you only want to replace the default admin theme with this one, and you don't have another theme present then choose 'the easiest way'. If you like to switch between admin themes, then choose 'the easy way'.
+
+h3. The Easiest Way (single-theme install)
+
+# Change directory into @siteroot/site@
+# Open a command prompt (if not already in one) and type...
+# @git clone https://github.com/netcarver/futura-delta.git templates-admin@
+
+That's it.
+
+h3. The Easy Way (multi-theme install)
+
+# Change directory into @siteroot/site@
+# Open a command prompt (if not already in one) and type...
+# @mkdir .themes@
+# @git clone https://github.com/netcarver/futura-delta.git .themes/futura-delta@
+# Now symlink futura-delta as templates-admin using @ln -s .themes/futura-delta templates-admin@
+
+If you want to play with different themes, just install them in the .themes directory and them adjust the symlink to point to right one.
