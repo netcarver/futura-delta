@@ -1,7 +1,7 @@
 var menu={
 
 //Specify full URL to down and right arrow images (23 is padding-right added to top level LIs with drop downs):
-arrowimages: {down:['down-arrow', '', 13], right:['right-arrow', '']},
+arrowimages: {down:['down-arrow', ''], right:['right-arrow', '']},
 transition: {overtime:30, outtime:30}, //duration of slide in/ out animation, in milliseconds
 shadow: {enable:false, offsetx:5, offsety:5}, //enable shadow?
 showhidedelay: {showdelay: 1, hidedelay: 200}, //set delay in milliseconds before sub menus appear and disappear, respectively

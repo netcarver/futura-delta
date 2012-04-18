@@ -19,7 +19,7 @@ foreach($pages->get($wire->config->adminRootPageID)->children("check_access=0") 
 
 	if($showItem) { 
 		$class = strpos($page->path, $p->path) === 0 ? " class='selected'" : '';	
-		echo "\n\t\t\t<li><a href='{$p->url}'$class>" . strip_tags($p->get('title|name')) . "</a>";
+		echo "\n\t\t\t<li><a href='{$p->url}'$class><span>" . strip_tags($p->get('title|name')) . "</span></a>";
 		if(count($p->children()) > 0 && $p->id != 3){
 			echo "<ul>";
 			echo "<span class='arrow'></span>";			
