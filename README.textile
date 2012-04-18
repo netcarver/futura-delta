@@ -10,6 +10,12 @@ Changes include...
 * Removing the heavy focus from the search box
 * Adding a 'back-to-top' button to the right-hand panel
 
+And now, from Adam Kiss, we have...
+
+* Improved pop-ups
+* Preview image in README file.
+
+
 h2. Preview
 
 !https://raw.github.com/netcarver/futura-delta/master/preview.png!
@@ -34,4 +40,8 @@ h3. The Easy Way (multi-theme install)
 # @git clone https://github.com/netcarver/futura-delta.git .themes/futura-delta@
 # Now symlink futura-delta as templates-admin using @ln -s .themes/futura-delta templates-admin@
 
-If you want to play with different themes, just install them in the .themes directory and them adjust the symlink to point to right one.
+If you want to play with different themes, just install them in the .themes directory and then adjust the symlink to point to right theme.
+
+h2. Credits
+
+Thanks to Nikola Vidoni for the original theme & to Adam Kiss for additional tweaks.
