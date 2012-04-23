@@ -9,11 +9,9 @@ Changes include...
 * Reducing the submenu pop-up delays to almost nothing
 * Removing the heavy focus from the search box
 * Adding a 'back-to-top' button to the right-hand panel
-
-And now, from Adam Kiss, we have...
-
-* Improved pop-ups
-* Preview image in README file.
+* Improved pop-ups (thanks Adam Kiss)
+* Preview image in README file (thanks Adam Kiss)
+* Fixed top nav width for 5 or more items (thanks Alan)
 
 
 h2. Preview

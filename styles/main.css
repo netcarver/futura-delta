@@ -325,13 +325,11 @@ body.login {
 	position: absolute;
 	top: 26px;
 	left: 220px;
-	width: 340px;
 	font-size: 12px;
 }
 
 .nav {
 	font-size: 12px;
-	width: 100%;
 	z-index: 100;
 }
 
