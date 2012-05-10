@@ -3,7 +3,7 @@
 
 		<div class="container">
 			<h3><a href='#'>Pages Loaded</a></h3>
-			<div>
+			<div class="frame">
 			<ul>
 			<?php 
 			foreach($pages->getCache() as $p) {
@@ -16,12 +16,12 @@
 
 		<div class="container">
 			<h3><a href='#'>Session</a></h3>
-			<div><?php print_r($_SESSION); ?></div>
+			<div class="frame"><?php print_r($_SESSION); ?></div>
 		</div>
 
 		<div class="container">
 			<h3><a href='#'>Modules Loaded</a></h3>
-			<div>
+			<div class="frame">
 			<ol>
 			<?php foreach($modules as $module) if(!$module instanceof ModulePlaceholder) echo "\n<li>" . $module->className() . ": " . get_class($module) . "</li>"; ?>
 			</ol>
@@ -30,7 +30,7 @@
 
 		<div class="container">
 			<h3><a href='#'>Queries</a></h3>
-			<div>
+			<div class="frame">
 			<ol>
 			<?php foreach($db->getQueryLog() as $n => $sql) echo "\n<li>$n. $sql</li>"; ?>
 			</ol>
@@ -39,7 +39,7 @@
 
 		<div class="container">
 			<h3><a href='#'>Fuel</a></h3>
-			<div>
+			<div class="frame">
 			<ol>
 			<?php foreach($fuel as $key => $value) echo "\n<li>$key</li>"; ?>
 			</ol>
@@ -48,7 +48,7 @@
 
 		<div class="container">
 			<h3><a href='#'>User (<?php echo $user->name;?>)</a></h3>
-			<div>
+			<div class="frame">
 			<h4>Current User's Roles</h4>
 			<ol>
 			<?php foreach($user->roles as $role) echo "\n<li>{$role->name}</li>"; ?>
@@ -81,4 +81,3 @@
 			 }); 
 		}); 
 	</script>
-

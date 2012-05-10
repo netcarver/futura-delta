@@ -2,9 +2,9 @@
 /**********************************************************************************************
  * ProcessWire Admin Control Panel - Skyscraper Theme - ui.css
  *
- * This file provides the final layout styling and overdies for the admin control panel. 
+ * This file provides the final layout styling and overdies for the admin control panel.
  * This is typically the last CSS file loaded, so it is used for overriding any default
- * styles provided by ProcessWire modules. 
+ * styles provided by ProcessWire modules.
  *
  * Copyright 2010 by Ryan Cramer
  *
@@ -16,13 +16,35 @@
  *
  */
 
+#fieldgroupContext {
+	top: 57px;
+	right: 250px;
+	z-index: 99999;
+}
+
+#fieldgroupContextSelect {
+	margin: 0 0 0 5px;
+	padding: 5px;
+	border: 1px solid #c8c8c8;
+	color: #434b54;
+}
+
+#fieldgroupContextSelect:focus {
+	border: 1px solid #aeadad;
+	box-shadow: rgba(35,35,35, 0.15) 0px 0px 6px;
+	-moz-box-shadow: rgba(35,35,35, 0.15) 0px 0px 6px;
+	-webkit-box-shadow: rgba(35,35,35, 0.15) 0px 0px 6px;
+	outline: none;
+}
+
 .ui-icon {
-	float: left; 
-	margin-right: 2px; 
+	float: left;
+	margin-right: 2px;
 }
 
 #notices .ui-state-highlight,
 #notices .ui-state-error {
+	border-top: 1px solid #fff;
 	padding: 8px 24px;
 	color: #fff;
 }
@@ -37,7 +59,7 @@
 }
 
 	#notices .ui-state-error pre {
-		font-size: 11px; 
+		font-size: 11px;
 		margin: 1em 0;
 	}
 
@@ -53,13 +75,25 @@
 	#notices .ui-state-highlight .ui-icon {
 		background: url(images/ui-icons.png) 0 0 no-repeat;
 	}
-	
+
 	#notices .ui-state-error .ui-icon {
 		background: url(images/ui-icons.png) 0 -20px no-repeat;
 	}
 
+	#notices a {
+		color: #fef185;
+	}
+
+		#notices a:hover {
+			color: #fff;
+		}
+
 .ui-dialog .ui-dialog-content {
-	padding: 0; 
+	padding: 0;
+}
+
+.ui-widget-overlay {
+	background: #000;
 }
 
 
@@ -77,7 +111,6 @@
 	.Inputfields select,
 	.Inputfields textarea {
 		font-size: 12px;
-		outline: none;
 	}
 
 	.Inputfields input,
@@ -92,17 +125,18 @@
 	.Inputfields select:focus,
 	.Inputfields textarea:focus {
 		border: 1px solid #9ba7af;
-		box-shadow: rgba(115,125,131, 0.15) 0px 0px 6px;  
-		-moz-box-shadow: rgba(115,125,131, 0.15) 0px 0px 6px;  
+		box-shadow: rgba(115,125,131, 0.15) 0px 0px 6px;
+		-moz-box-shadow: rgba(115,125,131, 0.15) 0px 0px 6px;
 		-webkit-box-shadow: rgba(115,125,131, 0.15) 0px 0px 6px;
+		outline: none;
 	}
 
-	.Inputfields .ui-widget-content {
-		padding: 1em; 
+	.Inputfields > li > div.ui-widget-content {
+		padding: 12px;
 	}
 
 	.Inputfields .ui-widget-header {
-		padding: 0.25em 0 0.25em 1em; 
+		padding: 4px 0 4px 11px;
 		-webkit-user-select: none;
 		-khtml-user-select: none;
 		-moz-user-select: none;
@@ -111,75 +145,101 @@
 	}
 
 		.Inputfields .InputfieldStateToggle span.ui-icon {
-			float: right; 
-			padding-right: 0.25em; 
+			float: right;
+			padding-right: 0.25em;
 		}
-
-	.Inputfields > li > .ui-widget-content > p {
-		margin-top: 0; 
-	}
-	.Inputfields > li > .ui-widget-content > .Inputfields > li {
-		margin-top: 0.5em; 
-	}
-
-	.Inputfields li > .ui-widget-content .Inputfields > li:last-child {
-		margin-bottom: 0;
-	}
 
 	.Inputfields > li {
 		display: block;
-		margin: 1.5em 0;
-		clear: both; 
+		margin: 1em 0;
+		clear: both;
+	}
+
+	.Inputfields > li.InputfieldColumnWidth {
+		float: left;
+		clear: none;
+		margin-top: 0;
+		margin-left: 1%;
+	}
+		.Inputfields li.InputfieldColumnWidthFirst {
+			clear: both;
+			margin-left: 0;
+		}
+
+	.Inputfields > li:first-child {
+		margin-top: 0;
+	}
+
+	.Inputfields > li > .ui-widget-content *:last-child {
+		margin-bottom: 0;
+	}
+		.Inputfields > li > .ui-widget-content ul.ui-helper-clearfix:last-child {
+			margin-bottom: -1em;
+		}
+
+	.Inputfields > li > .ui-widget-content > p,
+	.Inputfields > li > .ui-widget-content > div > p {
+		margin-top: 0;
+	}
+		.Inputfields > li > .ui-widget-content > p:last-child {
+			margin-bottom: 0;
+		}
+
+	.Inputfields > li > .ui-widget-content > .Inputfields > li {
+		margin-top: 0;
+	}
+		.Inputfields > li > .ui-widget-content > .Inputfields > li:first-child {
+			margin-top: 0;
+		}
+		.Inputfields li > .ui-widget-content > .Inputfields > li:last-child {
+			margin-bottom: 0;
 	}
 
 	.Inputfields > li .notes {
-		margin-bottom: 0; 
+		margin-bottom: 0;
+	}
+		.Inputfields > li > .ui-widget-content input + p.notes {
+			margin-top: 1em;
 	}
 
 	.Inputfields .InputfieldHidden {
-		display: none; 
+		display: none;
 	}
 
 	.Inputfields .InputfieldSubmit,
 	.Inputfields .InputfieldButton {
-		clear: none; 
+		clear: none;
 	}
 		.Inputfields .InputfieldSubmit .ui-widget-content,
 		.Inputfields .InputfieldButton .ui-widget-content {
-			padding: 0; 
-			background: none; 
-			border: none; 
+			padding: 0;
+			background: none;
+			border: none;
 		}
 
 		.Inputfields .InputfieldSubmit .ui-widget-header,
 		.Inputfields .InputfieldButton .ui-widget-header {
-			display: none; 
+			display: none;
 		}
 
 		.ui-button {
-			margin: 0 6px 0 0;
-			padding: 8px 14px 6px 14px; 
-			cursor: pointer; 
+			margin: 0 4px 0 0;
+			padding: 6px 11px !important;
 			font-size: 12px !important;
-			font-weight: bold !important; 
-			background: #2a373f !important;
+			font-weight: bold !important;
+			background: #9dce58 !important;
 			border: none !important;
-			-webkit-border-radius: 4px;
-			-moz-border-radius: 4px;
-			border-radius: 4px; 
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			cursor: pointer;
 		}
-		
+
 		.ui-button:hover {
 			background: #ef3a39 !important;
-			border: none !important; 
-		}
-		
-		.ui-button:active {
 			color: #fff;
-			background: #9dce58 !important;
-			border: none !important; 
 		}
-		
+
 		p > a > .ui-button {
 			font-size: 12px;
 		}
@@ -188,15 +248,21 @@
 			display: block;
 		}
 
-	.ui-button-text-only .ui-button-text { padding: 0px 6px 2px 6px !important; }
+		button.ui-datepicker-trigger {
+			margin: 0 0 0 0.5em;
+		}
+			#ui-datepicker-div {
+				display: none;
+			}
+
 
 	.Inputfields .InputfieldCheckboxes input,
 	.Inputfields .InputfieldRadios input {
-		margin-right: 0.25em; 
+		margin-right: 0.25em;
 	}
 		.Inputfields .InputfieldCheckboxes li,
 		.Inputfields .InputfieldRadios li {
-			margin: 0; 
+			margin: 0;
 		}
 
 	.Inputfields .InputfieldCheckbox {
@@ -204,7 +270,7 @@
 		.Inputfields .InputfieldCheckbox .notes,
 		.Inputfields .InputfieldCheckboxes .notes,
 		.Inputfields .InputfieldRadios .notes {
-			margin-top: 1em; 
+			margin-top: 1em;
 		}
 
 
@@ -212,9 +278,13 @@
 		display: block;
 	}
 
-	.Inputfields textarea, 
+	.Inputfields textarea,
 	.InputfieldMaxWidth {
-		width: 99%; 
+		width: 99%;
+	}
+
+		.Inputfields textarea {
+			display: block;
 	}
 
 	.Inputfields .InputfieldStateToggle {
@@ -225,10 +295,10 @@
 		}
 
 			.Inputfields > .InputfieldStateCollapsed .ui-widget-header {
-				opacity: 0.6; 
+				opacity: 0.6;
 			}
 			.Inputfields > .InputfieldStateCollapsed .ui-widget-header:hover {
-				opacity: 1.0; 
+				opacity: 1.0;
 			}
 
 			.Inputfields > .InputfieldStateCollapsed .ui-widget-content {
@@ -239,7 +309,7 @@
 			}
 
 	.InputfieldPageNameURL {
-		font-family: Monaco, Courier, Monaco, monospace; 
+		font-family: Monaco, Courier, Monaco, monospace;
 	}
 
 
@@ -264,30 +334,43 @@
         }
 
                 .MarkupPagerNav li a {
-                        padding: 4px 9px;
-                        margin: 0;
+                        padding: 7px 11px;
+                        margin: 0 0 0 2px;
                         text-decoration: none;
                         border: none;
-                        background: #373d41;
+                        background: #2a373f;
                         color: #fff;
                         font-weight: bold;
                         font-size: 11px;
-                        text-transform: uppercase;
-			opacity: 0.8; 
+						-webkit-border-radius: 3px;
+						-moz-border-radius: 3px;
+						border-radius: 3px;
+			opacity: 0.8;
                 }
 
                 .MarkupPagerNav li a:hover {
-			opacity: 1.0; 
+					background: #9dce58;
+			opacity: 1.0;
 		}
 
                 .MarkupPagerNav li.MarkupPagerNavOn a {
 			opacity: 1.0;
                         color: #fff;
-                        background: #0fa8da;
+                        background: #ef3a39;
                 }
 
                 .MarkupPagerNav li.MarkupPagerNavSeparator {
+                        padding: 6px 10px;
+                        margin: 0 0 0 2px;
+                        text-decoration: none;
                         border: none;
+                        background: #2a373f;
+                        color: #fff;
+                        font-weight: bold;
+                        font-size: 11px;
+						-webkit-border-radius: 3px;
+						-moz-border-radius: 3px;
+						border-radius: 3px;
                 }
 
 
@@ -305,11 +388,12 @@
 	 */
 	.PageList a.PageListPage,
 	.PageList a.PageListPage:hover {
-		color: #434b54;
-		background: none !important;
-		font-size: 12px !important;
-		text-transform: none !important;
+		font-family: Arial, Helvetica, sans-serif;
 		font-weight: bold;
+	}
+
+		.PageList a.PageListPage {
+		color: #434b54;
 	}
 		/**
 	 	 * Color when hovered
@@ -317,8 +401,10 @@
 		 */
 		.PageList a.PageListPage:hover {
 			color: #ef3a39;
-			background: none;
-			text-decoration: none;
+		}
+
+		span.detail {
+			color: #b4bbbe;
 		}
 
 	/**
@@ -327,8 +413,6 @@
 	 */
 	.PageList .PageListItemOpen > a.PageListPage  {
 		color: #ef3a39;
-		background-color: #fff;
-
 	}
 
 	/**
@@ -339,102 +423,93 @@
 		color: #b5c2ca;
 		font-weight: normal;
 	}
-	
+
 	.PageList .PageListStatusHidden a.PageListPage:hover {
-		color: #434b54;
+			color: #ef3a39;
+		}
+
+	.PageListItem {
+		padding: 10px 0 10px 28px;
+		line-height: 16px;
+		border-bottom: 1px solid #d2dadd;
+		background: url(images/page.png) 4px 10px no-repeat;
+	}
+
+	.PageListItemOpen {
+		background: url(images/page_open.png) 4px 10px no-repeat;
+	}
+
+	.PageListStatusHidden {
+		background: url(images/page_hidden.png) 4px 10px no-repeat;
+	}
+
+	.PageListStatusHidden.PageListItemOpen {
+		background: url(images/page_hidden_open.png) 4px 10px no-repeat;
+	}
+
+	.PageListID1 {
+		background: url(images/home.png) 4px 10px no-repeat;
+	}
+
+	.PageListID7 {
+		background: url(images/trash.png) 4px 8px no-repeat;
+	}
+
+	.PageListID7.PageListItemOpen {
+		background: url(images/trash_open.png) 4px 8px no-repeat;
 	}
 
 .PageList .PageListItem .PageListActions li {
-	display: inline !important;
 	border-left: 1px solid #d2dadd;
 	margin-left: 4px;
-	padding: 0 2px 0 4px;
-	text-transform: lowercase;
-}
-
-/**
- * Default style for links in actions list
- *
- */
-.PageList .PageListItem .PageListActions li a {
-	padding: 1px 3px 1px 3px;
-}
-
-.PageList .PageListItem {
-	padding: 6px 0 !important;
-	margin-bottom: 3px;
-	border-bottom: 1px solid #d2dadd;
-	line-height: 18px !important;
-}
-
-.PageListItem ul li a {
-	color: #434b54 !important;
-}
-
-.PageListItem ul li a:hover {
-	color: #ef3a39 !important;
-}
-
-span.detail {
-	color: #b4bbbe;
-}
-
-.PageListSortItem > a.PageListPage {
-	background-color: #f5275c; 
-	cursor: move; 
-}
-
-.PageListSorting .PageList .PageListItem ul.actions,
-.PageList .PageListSortItem span.PageListNumChildren {
-	display: none !important; 
-}
-
-.PageListSorting .PageListItem a.PageListPage {
-	text-decoration: none;
+		padding: 0 0 0 4px;
 }
 
 .PageListPlaceholder {
 	display: none;
 }
 
-.PageListPlaceholder .PageListPlaceholderItem {
-	/*background: #eee; */
-	height: 6px; /* see .PageListItem */ 
-	margin: 0; 
-	padding: 0;
-}
-
 .PageListPlaceholder + .PageListItem,
-.PageListPlaceholder + .PageList {	
-	margin-top: 2px !important;
-}
+.PageListPlaceholder + .PageList {
+		margin-top: 0 !important;
+	}
 
-.PageListPlaceholder:last-child {
-	margin-bottom: -2px; 
+	.PageListSortItem > a.PageListPage {
+		background: none;
+		color: #ef3a39;
+		cursor: move;
 }
 
 .PageListSortPlaceholder {
-	background-color: #e9edf0; 
-	height: 30px; 
-	width: auto; 
-	border-left: 2px solid #3c545b; 
-}
-
-/**
- * Style for the children label and notes
- *
- */
-.PageList .PageListNumChildren {
-	font-size: 11px; 
-	padding-left: 6px; 
-	text-transform: lowercase; 
+	background-color: #e9edf0;
+		height: 20px;
+	width: auto;
+	border-left: 2px solid #3c545b;
 }
 
 #content table.AdminDataList th,
 #content table.AdminDataList td,
 #content ul.AdminDataList li {
-	border-bottom: 1px solid #d2dadd !important;
-	vertical-align: middle; 
+		border-bottom: 1px solid #d2dadd;
+	vertical-align: middle;
 	padding: 8px 0;
-	margin: 0;
+}
+
+.PageListPagination {
+	font-size: 11px !important;
+	font-weight: bold !important;
+	margin: 10px 0 5px 0 !important;
+}
+
+.PageListPagination li {
+	display: inline;
+	margin: 0 0.25em;
+}
+
+.PageListPagination li a {
+	padding: 5px 9px;
+}
+
+.PageListPagination li a:hover,
+.PageListPagination li.PageListPaginationCurrent a {
 }

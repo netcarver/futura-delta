@@ -1,8 +1,8 @@
 (function($){
 
   var settings = {
-        speed: 350 //animation duration
-      , easing: "linear" //use easing plugin for more options
+        speed: 100 //animation duration
+      , easing: "swing" //use easing plugin for more options
       , padding: 10
       , constrain: false
     }

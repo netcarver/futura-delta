@@ -17,16 +17,20 @@ foreach($pages->get($wire->config->adminRootPageID)->children("check_access=0") 
 		}
 	}
 
-	if($showItem) { 
-		$class = strpos($page->path, $p->path) === 0 ? " class='selected'" : '';	
-		echo "\n\t\t\t<li><a href='{$p->url}'$class><span>" . strip_tags($p->get('title|name')) . "</span></a>";
+	if($showItem) {
+		$class = strpos($page->path, $p->path) === 0 ? " class='selected'" : '';
+		$title = strip_tags((string)$p->get('title|name')); 
+		$title = __($title, dirname(__FILE__) . '/default.php');
+		echo "\n\t\t\t\t<li><a href='{$p->url}'$class><span>$title</span></a>";
 		if(count($p->children()) > 0 && $p->id != 3){
 			echo "<ul>";
 			echo "<span class='arrow'></span>";			
 			foreach($p->children as $child){
 				if($child->viewable()) {
 					$class = strpos($page->path, $child->path) === 0 ? " class='selected'" : '';
-					echo "\n\t\t\t<li><a href='{$child->url}'$class>" . strip_tags($child->get('title|name')) . "</a></li>";
+					$child_title = strip_tags((string)$child->get('title|name')); 
+					$child_title = __($child_title, dirname(__FILE__) . '/default.php');
+					echo "\n\t\t\t\t<li><a href='{$child->url}'$class>$child_title</a></li>";
 				}
 			}
 			echo "</ul>";

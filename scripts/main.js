@@ -59,13 +59,13 @@ $(document).ready(function() {
 	});
 
 	$("#sidebar").stickySidebar({
-		timer: 50
+		speed: 200,
 	});
 
 	$('#top a').click(function () {
 		$('body,html').animate({
 			scrollTop: 0
-			}, 400);
+			}, 200);
 		return false;
 	});
 	

@@ -2,11 +2,9 @@
 @import url(JqueryUI/JqueryUI.css);
 
 /**********************************************************************************************
- * ProcessWire Admin Control Panel - EE Theme - main.css
+ * ProcessWire Admin Control Panel - Futura Delta - main.css
  *
- * Created 2011 by Nikola Vidoni
- *
- * Copyright 2010 by Ryan Cramer
+ * Copyright 2010 by Ryan Cramer / Copyright 2012 by Nikola Vidoni
  *
  */
 
@@ -95,7 +93,7 @@ body {
 	body.modal input,
 	body.modal select {
 		padding: 5px;
-		border: 1px solid #d2dadd;
+		border: 1px solid #dfdfdf;
 		color: #434b54;
 	}
 
@@ -117,7 +115,7 @@ body {
 	}
 
 a {
-	font-family: "Helvetica Neue", Arial, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	color: #ef3a39;
 
 }
@@ -143,30 +141,42 @@ a {
  */
 
 body.login {
-		background: #f1f5f6;
+	background: #2a373f;
+}
+
+body.login #notices {
+	margin: 20px 0 0 0;
+}
+
+#background {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50%;
+    background: #1b2830 url(images/login.png) bottom repeat-x;
 	}
 
 #loginBox {
 	width: 220px;
-	height: 280px;
-	text-align: center;
-	color: #fff;
+	height: 260px;
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	margin-left: -110px;
-	margin-top: -140px;
+	margin-left: -130px;
+	margin-top: -150px;
 	padding: 20px;
-	background: #fff url(images/login.png) repeat-x;
-	border: 1px solid #9ba7af;
-	box-shadow: rgba(115,125,131, 0.15) 0px 0px 6px;
-	-moz-box-shadow: rgba(115,125,131, 0.15) 0px 0px 6px;
-	-webkit-box-shadow: rgba(115,125,131, 0.15) 0px 0px 6px;
+	background: #fff;
+	border: 1px solid #232323;
+	box-shadow: rgba(0,0,0, 0.40) 0px 0px 6px;
+	-moz-box-shadow: rgba(0,0,0, 0.40) 0px 0px 6px;
+	-webkit-box-shadow: rgba(0,0,0, 0.40) 0px 0px 6px;
 }
 
 	#loginBox .header {
 		width: 220px;
-		height: 70px;
+		height: 50px;
+		border-bottom: 1px solid #dfdfdf;
 	}
 
 	#loginBox .logo {
@@ -175,8 +185,8 @@ body.login {
 		top: 26px;
 		width: 178px;
 		height: 22px;
-		text-indent: -9999px;
-		background: url(images/logo.png) top left no-repeat;
+		text-indent: -99999px;
+		background: url(images/logo-login.png) no-repeat;
 	}
 
 	#loginBox #ProcessLoginForm,
@@ -191,7 +201,7 @@ body.login {
 		padding: 0 !important;
 		background: none;
 		border: none;
-		color: #5f6c74;
+		color: #607889;
 		font-size: 20px;
 		text-align: left;
 	}
@@ -211,7 +221,7 @@ body.login {
 
 	#loginBox ul.Inputfields #login_name,
 	#loginBox ul.Inputfields #login_pass {
-		width: 210px;
+		width: 208px;
 	}
 
 	#loginBox ul.Inputfields .InputfieldSubmit {
@@ -228,16 +238,16 @@ body.login {
 	}
 
 	#loginBox #ProcessLoginForm li#wrap_login_pass {
-		margin: 0 0 30px 0;
+		margin: 0 0 20px 0;
 	}
 
-	#loginBox #InputfieldForm1 #username {
-		width: 210px !important;
+	#loginBox #username {
+		width: 208px !important;
 	}
 
-	#loginBox #ProcessLoginForm .InputfieldMaxWidth {
+	#loginBox .InputfieldMaxWidth {
 		margin: 0;
-		width: 210px !important;
+		width: 208px !important;
 	}
 
 	#loginBox #ProcessLoginForm .ui-widget-content,
@@ -252,43 +262,28 @@ body.login {
 	#loginBox #InputfieldForm1 .ui-widget-content .description {
 		margin: 0 0 10px 0;
 		color: #434b54;
-		font-size: 11px;
-		line-height: 14px;
+		font-size: 10px;
+		line-height: 12px;
 	}
 
-	#loginBox #ProcessLoginForm .ui-icon {
+	#loginBox #ProcessLoginForm .ui-icon,
+	#InputfieldForm1 .ui-icon {
 		background: none;
 	}
 
-	#loginBox #ProcessLoginForm #Inputfield_submit,
-	#loginBox #InputfieldForm1 #submit_forgot {
+	#loginBox #Inputfield_submit,
+	#loginBox #submit_forgot {
 		float: left;
 		margin: 0;
-		padding: 7px 20px !important;
-		background: #ef3a39 !important;
-	}
-
-	#loginBox #ProcessLoginForm #Inputfield_submit:hover,
-	#loginBox #InputfieldForm1 #submit_forgot:hover {
-		background: #2a373f !important;
-	}
-
-	#loginBox #ProcessLoginForm #Inputfield_submit:active,
-	#loginBox #InputfieldForm1 #submit_forgot:active {
-		background: #9dce58 !important;
 	}
 
 	#loginBox > div {
 		float: right;
-		margin: 0;
+		margin: -2px 0 0 0;
 	}
 
 	#loginBox > div a {
-		color: #5f6c74;
-	}
-
-	#loginBox > div a:hover {
-		color: #ef3a39;
+		font-size: 11px;
 	}
 
 	#loginBox > div .ui-icon-locked,
@@ -351,14 +346,14 @@ body.login {
 
 .nav ul li a span {
 	display: block;
-	padding: 4px 15px;
-	margin-bottom: 16px;
+	padding: 5px 11px;
 	font-weight: bold;
 	color: #f0f0f0;
 	text-decoration: none;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	margin-bottom: 16px;
 }
 
 .nav ul li a:link span,
@@ -381,7 +376,7 @@ body.login {
 	left:0;
 	top: 44px !important;
 	display:none;
-	padding: 0 0 3px 0;
+	padding: 0;
 	background: #ef3a39;
 	-webkit-border-bottom-right-radius: 3px;
 	-webkit-border-bottom-left-radius: 3px;
@@ -394,7 +389,7 @@ body.login {
 .nav ul li ul span.arrow {
 	position: absolute;
 	top: -6px;
-	right: 145px;
+	right: 140px;
 	width: 11px;
 	height: 6px;
 	background: url(images/selected.png) no-repeat;
@@ -402,7 +397,7 @@ body.login {
 
 .nav ul li ul li {
 	float:left;
-	padding: 0 8px 0 16px;
+	padding: 0 2px 0 10px;
 }
 
 .nav ul li ul li:last-child {
@@ -414,13 +409,13 @@ body.login {
 }
 
 .nav ul li ul li a {
-	padding: 7px 14px 7px 2px;
+	padding: 8px 16px 8px 4px;
 	width: 120px;
 	color: #feceaa !important;
 	line-height: 16px;
 	font-weight: bold;
 	text-transform: none;
-	border-bottom: 1px solid #c71d1c;
+	border-bottom: 1px solid #d3323a;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 0px;
 	border-radius: 0px;
@@ -439,7 +434,7 @@ body.login {
 }
 
 .nav ul li ul li a.selected {
-	color: #fff !important;
+	color: #fdce9a !important;
 	background: none;
 	border: none;
 }
@@ -458,7 +453,7 @@ body.login {
 		top: 78px;
 	}
 		#breadcrumbs li {
-			color: #fff;
+			color: #5f6c74;
 			font-size: 12px;
 			display: inline;
 			padding: 2px 4px 5px 26px;
@@ -492,7 +487,6 @@ body.login {
 	top: 78px;
 	right: 0;
 	color: #5f6c74;
-
 }
 	#user span {
 		font-weight: bold;
@@ -501,7 +495,7 @@ body.login {
 
 #info {
 	position: absolute;
-	top: 30px;
+	top: 31px;
 	right: 0;
 
 }
@@ -540,12 +534,14 @@ body.login {
 
 	h1.title {
 		position: relative;
-		top: 129px;
+		top: 128px;
         left: 0;
+		padding: 0 0 0 34px;
 		font-size: 26px;
 		font-family: Arial, Helvetica, sans-serif;
 		color: #434b54;
 		white-space: nowrap;
+		background: transparent url(images/document.png) 0 0 no-repeat;
 	}
 
 	/**
@@ -554,18 +550,17 @@ body.login {
 	 */
 	#head_button {
 		position: absolute;
-		top: 126px;
+		top: 125px;
 		right: 0;
 		display: none;
 	}
 		#head_button button {
-			margin-right: 0;
-			margin-left: 10px;
+			margin: 0 0 0 10px;
 			font-size: 12px;
 		}
 
 #notices {
-	margin: 25px 0 -25px 0;
+	margin: 19px 0 -20px 0;
 	font-size: 12px;
 }
 
@@ -601,13 +596,44 @@ body.login {
 #sidebar {
 	float: left;
 	width: 210px;
-	margin-top: 10px;
-	margin-left: -210px;
+	margin: 10px 0 0 -210px;
 }
 
 body.modal #sidebar {
 	display: none;
 }
+
+#sidebar #top {
+	float: right;
+	position: relative;
+	margin: 19px 0 0 25px;
+	width: 190px;
+	background: #bbc8d0;
+	padding: 5px 5px 5px 15px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+#sidebar #top span {
+	float: left;
+	margin: 5px 15px 5px 0;
+	font-weight: bold;
+	color: #fff;
+}
+
+		#sidebar #top a {
+			float: right;
+			display: block;
+			width: 31px;
+			height: 31px;
+			text-indent: -99999px;
+			background: url(images/top.png) no-repeat 0 0;
+		}
+
+			#sidebar #top a:hover {
+				background: url(images/top.png) no-repeat 0 -31px;
+			}
 
 #search {
     display: block;
@@ -627,7 +653,7 @@ body.modal #sidebar {
 	width: 170px;
 	height: 22px;
 	color: #f26865;
-	border: 1px solid #b20e0d;
+	border: 1px solid #f26865;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
@@ -637,8 +663,8 @@ body.modal #sidebar {
 }
 
 #ProcessPageSearchQuery:focus {
-	color: #feceaa;
-	background: #8b0b0a;
+	/* color: #feceaa; */
+	/* background: #8b0b0a; */
 	border: 1px solid #8b0b0a;
 	box-shadow: rgba(42,55,63, 0.15) 0px 0px 5px;
 	-moz-box-shadow: rgba(42,55,63, 0.15) 0px 0px 5px;
@@ -649,18 +675,14 @@ body.modal #sidebar {
 	position:relative;
 	display: inline !important;
 	float: right;
-	top: -30px;
-	right: 2px;
-	width: 40px;
-	height: 26px;
+	top: -26px;
+	right: 10px;
+	width: 17px;
+	height: 17px;
 	background: url(images/search.png) no-repeat 0 0;
 	cursor: pointer;
 	border: none;
 	text-indent: -99999px;
-}
-
-#ProcessPageSearchSubmit:hover {
-	background: url(images/search.png) no-repeat 0 -26px;
 }
 
 #latest,
@@ -744,7 +766,7 @@ span.title {
 
 	.content h2 {
 		font-family: Arial, Helvetica, sans-serif;
-		margin: 1em 0;
+		margin: 20px 0;
 		font-size: 22px;
 		color: #83949f;
 	}
@@ -806,13 +828,13 @@ span.title {
 		 */
 		.content dl {
 			margin: 1em 0;
-			border-bottom: 1px solid #d2dadd;
+			border-bottom: 1px solid #dfdfdf;
 		}
 			.content dt,
 			.content dt {
 				display: block;
 				font-weight: bold;
-				border-top: 1px solid #d2dadd;
+				border-top: 1px solid #dfdfdf;
 				padding-top: 0.75em;
 			}
 			.content dt a {
@@ -843,32 +865,31 @@ span.title {
 
 	#content .WireTabs {
 		position: relative;
+		margin: 10px 0 0 0;
+		padding-bottom: 8px;
 		left: 0;
-		margin-top: 10px;
-		border-bottom: 1px solid #d2dadd;
-		height: 29px;
+		height: 21px;
 		list-style: none;
+		border-bottom: 1px solid #d2dadd;
 	}
 
 	#content .WireTabs li {
+		margin: 0;
+		padding: 0;
 		list-style: none;
 		background: none;
 	}
 
 	#content .WireTabs li a {
-		border: 1px solid #cfd5d8;
-		border-bottom: 1px solid #d2dadd;
-		background: #f1f5f6;
-		display: block;
 		float: left;
-		position: relative;
-		bottom: 0px;
-		margin-right: 5px;
-		font-size: 12px;
+		display: block;
+		margin: 0 6px 0 0;
+		padding: 8px 11px;
 		line-height: 12px;
-		padding: 8px 15px 8px 15px;
+		background: #f1f5f6;
 		color: #434b54;
 		text-decoration: none;
+		border: 1px solid #d2dadd;
 		-webkit-border-top-left-radius: 4px;
 		-webkit-border-top-right-radius: 4px;
 		-moz-border-radius-topleft: 4px;
@@ -878,20 +899,17 @@ span.title {
 	}
 
 	#content .WireTabs li a:hover {
-		padding: 8px 15px 8px 15px;
-		border: 1px solid #2a373f;
+		padding: 9px 12px;
+		border: none;
 		background: #2a373f;
 		color: #fff;
 	}
 
 	#content .WireTabs li a.on {
-		padding: 8px 15px 8px 15px;
-		border: 1px solid #ef3a39;
+		padding: 9px 12px;
+		border: none;
 		background: #ef3a39;
 		color: #fff;
-	}
-
-	#content .WireTabs li a.on {
 		font-weight: bold;
 	}
 
@@ -903,11 +921,11 @@ span.title {
 	#content .WireTabs li a#_ProcessPageEditView {
 		float: right;
 		margin-right: 0;
-		padding: 5px 0 9px 26px;
+		padding: 9px 0 11px 26px;
 		height: 17px;
-		background: transparent url(images/view.png) 0 2px no-repeat;
+		background: transparent url(images/view.png) 0 5px no-repeat;
 		border: none;
-		color: #000;
+		color: #434b54;
 	}
 
 	#content .WireTabs li a#_ProcessPageEditView:hover {
@@ -922,7 +940,6 @@ span.title {
 
 #footer {
 	font-size: 12px;
-	color: #85AABA;
 	background: url(images/footer.png) repeat-x;
 	clear: both;
 
@@ -932,11 +949,11 @@ span.title {
 	}
 	#footer #left {
 		display: block;
-		float: left;
-		margin-top: 23px;
-		color: #9ba7af;
-		font-size: 11px;
-	}
+			float: left;
+			margin-top: 25px;
+			color: #9ba7af;
+			font-size: 11px;
+		}
 		#footer #left a {
 			color: #fff;
 		}
@@ -944,9 +961,7 @@ span.title {
 			color: #f84948;
 		}
 		#footer #left span {
-			margin: 0 6px;
-			font-size: 16px;
-			color: #3a4c57;
+			margin: 0 4px;
 		}
 
 	#footer #right {
@@ -956,45 +971,64 @@ span.title {
 		#footer #code {
 			float: left;
 			margin-top: 25px;
-			color: #9ba7af;
+			color: #fff;
 			font-size: 11px;
 		}
 		#footer #code span {
-			color: #fff;
-		}
-
-		#sidebar #top, #footer #top {
-			float: right;
-			position: relative;
-			margin: 19px 0 0 25px;
-		}
-
-		#sidebar #top a, #footer #top a {
-			display: block;
-			width: 31px;
-			height: 31px;
-			text-indent: -99999px;
-			background: url(images/top.png) no-repeat 0 0;
-		}
-
-		#sidebar #top a:hover, #footer #top a:hover {
-			background: url(images/top.png) no-repeat 0 -31px;
+			color: #f84948;
 		}
 
 	#debug {
-		margin-top: 2em;
+		margin-top: 5px;
 	}
+
+	#debug h3 {
+		margin: 15px 0 0 0;
+		padding: 8px 15px;
+		background: #9dce58;
+		border: none;
+	}
+
+		#debug h3 a {
+				padding: 0 0 0 15px;
+				font-size: 12px !important;
+				font-weight: bold;
+			color: #fff;
+		}
+
 		#debug .container {
+			margin: 0 0 0 0 !important;
+			padding: 0 !important;
 			width: 100%;
 		}
+
+		#debug .container .frame {
+			padding: 20px;
+			font-size: 12px;
+		}
+
 		#debug p {
-			margin: 1em 0;
+			margin: 20px 0;
+		}
+		#debug ul {
+			margin: 0;
+			padding: 0;
 		}
 		#debug ol {
-			margin: 1em 0;
+			margin: 0 0 0 20px;
+			padding: 0;
+		}
+		#debug ul li,
+		#debug ol li {
+			margin: 0;
+			padding: 0;
+			font-size: 12px;
 		}
 		#debug h4 {
 			font-weight: bold;
+		}
+		#debug pre {
+			font-size: 12px;
 		}
 
 /***********************************************************************************************
@@ -1019,6 +1053,6 @@ span.title {
 }
 
 .detail {
-	font-size: 0.9166em;
+	font-size: 11px;
 	color: #434b54;
 }

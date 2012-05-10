@@ -3,9 +3,7 @@
 /**
  * ProcessWire 2.x Admin Markup Template
  *
- * Created 2011 by Nikola Vidoni
- *
- * Copyright 2010 by Ryan Cramer
+ * Copyright 2010 by Ryan Cramer / Copyright 2012 by Nikola Vidoni
  *
  */
 
@@ -23,14 +21,32 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/main.js");
 $config->scripts->append($config->urls->adminTemplates . "scripts/cufon-yui.js");
 $config->scripts->append($config->urls->adminTemplates . "scripts/adventor.font.js");
 
+$browserTitle = wire('processBrowserTitle');
+if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FILE__) . ' &bull; ProcessWire';
+
+/*
+ * Dynamic phrases that we want to be automatically translated
+ *
+ * These are in a comment so that they register with the parser, in place of the dynamic __() function calls with page titles.
+ *
+ * __("Pages");
+ * __("Setup");
+ * __("Modules");
+ * __("Access");
+ * __("Admin");
+ *
+ */
+
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo __('en', __FILE__); // HTML tag lang attribute
+	/* this intentionally on a separate line */ ?>">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="robots" content="noindex, nofollow" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title><?php echo strip_tags($page->get("browser_title|headline|title|name")); ?> &bull; ProcessWire</title>
+	<title><?php echo $browserTitle; ?></title>
 
 	<script type="text/javascript">
 		<?php
@@ -68,13 +84,23 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/adventor.font.
 </head>
 
 <?php if($user->isGuest()) { ?>
+
 <body class="login">
+
+	<div id="background"></div>
+
     <div id="loginBox">
+
     	<div class="header">
         	<div class="logo">ProcessWire</div>
         </div>
+
         <?php echo $content?>
+
     </div>
+
+    <?php if(count($notices)) include($config->paths->adminTemplates . "notices.inc"); ?>
+
 </body>
 
 <?php } else { ?>
@@ -82,10 +108,15 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/adventor.font.
 <body<?php if($bodyClass) echo " class='$bodyClass'"; ?>>
 
 <div id="wrapper">
+
 <div id="main">
+
 	<div id="header" class="header">
+
 		<div class="container">
+
             <p id="logo">ProcessWire</p>
+
 			<div id="nav" class="nav">
 				<ul>
 					<?php include($config->paths->templatesAdmin . "topnav.inc"); ?>
@@ -97,8 +128,8 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/adventor.font.
             <ul id='breadcrumbs'>
 			<?php
 			foreach($this->fuel('breadcrumbs') as $breadcrumb) {
-				$title = htmlspecialchars(strip_tags($breadcrumb->title));
-				echo "\n\t\t\t<li><a href='{$breadcrumb->url}'>{$title}</a> <span></span></li>";
+				$title = __($breadcrumb->title, __FILE__);
+				echo "\n\t\t\t\t<li><a href='{$breadcrumb->url}'>{$title}</a></li>";
 			}
             ?>
             </ul>
@@ -112,18 +143,18 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/adventor.font.
             <ul id="info">
 
                 <?php if($user->hasPermission('profile-edit')): ?>
-                <li><a class="profile" href="<?php echo $config->urls->admin; ?>profile/">Profile</a></li>
+                <li><a class="profile" href="<?php echo $config->urls->admin; ?>profile/"><?php echo ucfirst (__('profile', __FILE__)); ?></a></li>
                 <?php endif; ?>
 
-                <li><a class="view" href="<?php echo $config->urls->root; ?>">View Site</a></li>
+                <li><a class="view" href="<?php echo $config->urls->root; ?>"><?php echo ucfirst (__('Site', __FILE__)); ?></a></li>
 
-                <li><a class="logout" href="<?php echo $config->urls->admin; ?>login/logout/">Logout</a></li>
+                <li><a class="logout" href="<?php echo $config->urls->admin; ?>login/logout/"><?php echo ucfirst (__('logout', __FILE__)); ?></a></li>
 
             </ul>
 
             <?php endif; ?>
 
-			<h1 class="title"><?php echo strip_tags($this->fuel->processHeadline ? $this->fuel->processHeadline : $page->get("title|name")); ?></h1>
+			<h1 class="title"><?php echo __(strip_tags($this->fuel->processHeadline ? $this->fuel->processHeadline : $page->get("title|name")), __FILE__); ?></h1>
 
 		</div>
 
@@ -140,43 +171,58 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/adventor.font.
         <div class="main-content">
 
             <?php if(trim($page->summary)) echo "<h2>{$page->summary}</h2>"; ?>
+
             <?php if($page->body) echo $page->body; ?>
 
             <?php echo $content?>
+
+			<?php if($config->debug && $this->user->isSuperuser()) include($config->paths->adminTemplates . "debug.inc"); ?>
 
         </div>
 
     </div>
 
     <div id="sidebar">
-        <div id="search"><?php echo $searchForm; ?></div>
+
+        <div id="search"><?php echo tabIndent($searchForm, 3); ?></div>
+
         	<div id="latest-updates">
 
             <div id="latest">Latest updates</div>
+
 				<?php $modified = $pages->find('limit=3, sort=-modified'); ?>
+
                 <ul>
+
                     <?php foreach($modified as $m){
                         if ($m->editable()) {
                             echo "<li><a href='".$config->urls->admin."page/edit/?id={$m->id}'><span class='date'>". date('d.m.', $m->modified) ."</span> " . $m->title . "</a></li>\n";
                         }
                     } ?>
+
                 </ul>
+
             </div>
 
             <div id="newest-added">
+
                 <div id="newest">Newest added</div>
-                <?php $newest = $pages->find('limit=3, sort=-created');
-                ?>
+
+                <?php $newest = $pages->find('limit=3, sort=-created'); ?>
+
                 <ul>
+
                     <?php foreach($newest as $n){
                         if ($n->editable()) {
                             echo "<li><a href='".$config->urls->admin."page/edit/?id={$n->id}'><span class='date'>". date('d.m.', $n->created) ."</span> " . $n->title . "</a></li>\n";
                         }
                     } ?>
+
                 </ul>
+
 			</div>
 
-			<div id="top"><a href="#">Top</a></div>
+            <div id="top"><span>Back to top</span><a href="#">Top</a></div>
 
         </div>
 
@@ -205,8 +251,6 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/adventor.font.
             </div>
 
         </div>
-
-        <?php if($config->debug && $this->user->isSuperuser()) include($config->paths->adminTemplates . "debug.inc"); ?>
 
     </div>
 
